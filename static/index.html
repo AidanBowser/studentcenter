@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Center desk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div>
+      <p class="eyebrow">CCSU Student Center</p>
+      <h1>Desk</h1>
+    </div>
+    <div class="header-side">
+      <p class="readonly">Read only. Nothing here changes AssetPanda.</p>
+      <p id="freshness"></p>
+      <button id="refresh" type="button">Refresh</button>
+    </div>
+  </header>
+
+  <p id="banner" class="banner" hidden></p>
+
+  <section class="ask">
+    <form id="ask-form">
+      <label for="q">What went out for an event, or who scanned it?</label>
+      <div class="ask-row">
+        <input id="q" name="q" type="search" placeholder="Grad open house, RADIO20, ballroom" autocomplete="off" enterkeyhint="search">
+        <label class="date">From <input id="start" name="start" type="date"></label>
+        <label class="date">To <input id="end" name="end" type="date"></label>
+        <button type="submit">Search</button>
+      </div>
+      <p id="hint" class="hint"></p>
+    </form>
+  </section>
+
+  <section id="summary" class="summary" aria-live="polite"></section>
+
+  <div class="layout">
+    <section>
+      <div class="section-head">
+        <h2>Still out or needs a look</h2>
+        <p>Current status on the asset, not an old checkout that was later closed.</p>
+      </div>
+      <div id="out"></div>
+    </section>
+    <section>
+      <div class="section-head">
+        <h2>Scanned or audited</h2>
+        <p>Inventory updates and mass updates, grouped by the person and the pass.</p>
+      </div>
+      <div id="scans"></div>
+    </section>
+  </div>
+
+  <section id="patron-section" class="events-section">
+    <div class="section-head">
+      <h2>Latest patron loans</h2>
+      <p>The last items checked out to a patron. Search a name or asset to look further back.</p>
+    </div>
+    <div id="patrons"></div>
+  </section>
+
+  <section class="events-section">
+    <div class="section-head">
+      <h2>Moved for an event</h2>
+      <p>The event is the reason on a tech checkout, or the note on a staff assignment. A handoff shows who received the item.</p>
+    </div>
+    <div id="events"></div>
+  </section>
+
+  <section id="asset-section" hidden>
+    <div class="section-head">
+      <h2>Assets that match</h2>
+    </div>
+    <div id="assets"></div>
+  </section>
+
+  <script src="/app.js"></script>
+</body>
+</html>
